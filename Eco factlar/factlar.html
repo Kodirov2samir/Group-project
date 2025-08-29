@@ -132,7 +132,8 @@
         display: flex;
         flex-direction: column;
         gap: 30px;
-        
+        align-items: center;
+
       }
 
       /* ======= Map card ======= */
@@ -141,7 +142,7 @@
         border-radius: 18px;
         padding: 18px;
         box-shadow: 0 8px 30px rgba(15, 23, 42, 0.06);
-        width: 95%;
+        width: 770px;
         margin-bottom: 0px;
       }
       .a-wrapper {
@@ -153,22 +154,26 @@
 
       .slider {
         position: relative;
-        overflow: hidden;
-        border-radius: 12px;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        width: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  width: 700px; /* можно ограничить */
+  margin: auto;
       }
+
       .slides {
         display: flex;
-        width: 100%;
-        transition: transform 0.6s ease-in-out;
+  transition: transform 0.6s ease-in-out;
+  width: 100%; /* temporary width, will be overridden by JS */
+   
       }
       .slides img {
-        width: 100%;
-        height: 280px;
-        object-fit: cover;
-        flex-shrink: 0;
-        border-radius: 12px;
+       flex: 0 0 100%;  /* каждая картинка занимает всю ширину контейнера */
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 12px;
       }
       .prev,
       .next {
@@ -194,7 +199,7 @@
       /* ======= Eko Faktlar section ======= */
       .eco-section {
         max-width: 920px;
-        margin-left: 180px;
+        
       }
       .eco-header {
         display: flex;
@@ -262,6 +267,7 @@
         font-size: 12px;
         color: var(--muted);
       }
+      
 
       /* ======= Counter card in sidebar ======= */
       .counter-card {
@@ -284,27 +290,56 @@
       }
 
       /* ======= Footer contact ======= */
-      .footer-contacts {
-        max-width: 920px;
-        margin-top: px;
-        background: #fff;
-        padding: 14px;
-        border-radius: 12px;
-        box-shadow: 0 6px 18px rgba(15, 23, 42, 0.04);
-        margin-left: 160px;
-      }
-      .contacts-row {
+      .footer {
+      
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+
+        
+        padding: 0 50px;
+        margin: 0 auto 24px auto;
+       border-radius: 10px;
         display: flex;
-        gap: 18px;
         flex-wrap: wrap;
-        align-items: center;
-      }
-      .contact-item {
+        gap: 24px;
+        align-items: flex-start;
+        justify-content: space-between;
+        font-size: 1rem;
         display: flex;
-        gap: 8px;
         align-items: center;
-        color: var(--muted);
-        font-size: 14px;
+        justify-content: space-between;
+
+        margin-top: px;
+        height: 150px;
+        width: 90%;
+      }
+      .footer-col {
+        
+        display: flex;
+        flex-direction: column;
+        
+        gap: 10px;
+      }
+      .footer-col.icons {
+        gap: 20px;
+        
+      }
+      
+      .footer-col .footer-title {
+        font-weight: 600;
+        margin-bottom: 6px;
+      }
+      .footer-col .footer-link {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: #222;
+        text-decoration: none;
+      
+      }
+      .footer-col .footer-link svg {
+        width: 18px;
+        height: 18px;
+        color: #1aaf5d;
       }
     </style>
   </head>
@@ -379,10 +414,10 @@
                     src="https://thumbs.dreamstime.com/b/environment-earth-day-hands-trees-growing-seedlings-bokeh-green-background-female-hand-holding-tree-nature-field-118143566.jpg"
                     alt="Chiqindi joyi 1"
                   />
-                  <img src="" alt="Chiqindi joyi 2" />
-                  <img src="18a7b896.png" alt="Chiqindi joyi 3" />
-                  <img src="49093c3a.png" alt="Chiqindi joyi 4" />
-                  <img src="18a7b896.png" alt="Chiqindi joyi 5" />
+                  <img src="https://www.heritagefund.org.uk/sites/default/files/styles/main_image_desktop/public/2022-11/JapaneseGarden_60_954x536.jpg.webp?itok=CGzlci-h" alt="Chiqindi joyi 2" />
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgmQGDNvmyjR3beaun97h9FTs0lNF_Yp6-_A&s" alt="Chiqindi joyi 3" />
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKGAnvOOPyeQ_cawBwbMZOGr9Zm-pZonl76g&s" alt="Chiqindi joyi 4" />
+                  <img src="https://res.cloudinary.com/cognitives/image/upload/c_fill,dpr_auto,f_auto,fl_lossy,g_face:auto,q_auto/ezfkqemao7tt1ehvrcrd" alt="Chiqindi joyi 5" />
                 </div>
                 <button class="prev">‹</button>
                 <button class="next">›</button>
@@ -403,133 +438,263 @@
           </section>
 
           <!-- Footer -->
-          <section class="footer-contacts">
-            <div class="contacts-row">
-              <div class="contact-item">✉️ example@example.com</div>
-              <div class="contact-item">🐦 @Mirzaboyev_Azizbek</div>
-              <div class="contact-item">📱 +998 94 154 98 10</div>
-              <div class="contact-item">
-                🗺️ Chiqindi tashlash joyini belgilang — yordam bering
+          <div class="footer">
+        
+         
+            <div style="display: flex;flex-direction: column;gap: 10px;">
+             
+              </span><a href="https://t.me/Mirzaboyev_Azizbek" class="footer-link">
+              <!-- Telegram SVG -->
+              
+              @Mirzaboyev_Azizbek
+            </a>
+            
+            <a href="tel:+998941549810" class="footer-link">
+              <!-- Phone SVG -->
+              
+              +998 94 154 98 10
+            </a>
+            </div>
+            <div style="margin-bottom: 70px;" class="footer-col">
+              <div class="footer-title">Bizga yordam berish</div>
+              <div>
+                <input type="checkbox" id="help" checked disabled />
+                <label for="help"
+                >Koproq factlarni taqdim etish orqali bizga yordam bering</label
+                >
               </div>
             </div>
-          </section>
+            </div>
+        </div>
         </main>
       </div>
     </div>
 
     <script>
-      // Faktlar
-      const facts = [
-        {
-          icon: "🌊",
-          title: "Kislorodning katta qismi okeandan",
-          desc: "Yer kislorodining katta qismi (taxminan 50–70%) okeanlarda yashovchi fitoplanktonlar tomonidan ishlab chiqariladi.",
-          note: "Okeanlar – yer nafasining muhim manbai.",
-        },
-        {
-          icon: "🌳",
-          title: "Bitta daraxtning hissasi",
-          desc: "1 daraxt yiliga taxminan 22 kg CO₂ ni yutadi va atrofga kislorod chiqaradi.",
-          note: "Daraxt ekish – katta ta'sir ko‘rsatadi.",
-        },
-        {
-          icon: "🥤",
-          title: "Plastik shishaning umrini o‘ylab ko‘ring",
-          desc: "Bir martalik PET shisha parchalanishi uchun yuzlab yillar kerak bo‘lishi mumkin (taxminan 450 yil).",
-          note: "Qayta ishlash va qayta foydalanish muhim.",
-        },
-        {
-          icon: "💡",
-          title: "LED energiya tejaydi",
-          desc: "LED lampalar an’anaviy lampalarga nisbatan ~80% kamroq energiya iste'mol qiladi.",
-          note: "Oddiy amaliy o‘zgarishlar ham katta tejash beradi.",
-        },
-        {
-          icon: "♻️",
-          title: "Alyuminiy qayta ishlash",
-          desc: "Alyuminiy bankani qayta ishlash yangi bankani ishlab chiqarishga qaraganda ~95% energiya tejaydi.",
-          note: "Qayta ishlash muhim ekologik ta'sir ko‘rsatadi.",
-        },
-        {
-          icon: "🛍️",
-          title: "Mato sumka vs plastik paket",
-          desc: "Mato sumka ishlatish orqali yiliga yuzlab plastik paketlarni tejash mumkin.",
-          note: "Oddiy odat — katta farq.",
-        },
-        {
-          icon: "📄",
-          title: "Qog'ozni qayta ishlash",
-          desc: "1 tonna qog‘ozni qayta ishlash ko‘plab daraxtlarni asrab qolishga yordam beradi.",
-          note: "Qayta ishlash har doim foydali.",
-        },
-        {
-          icon: "🚲",
-          title: "Velosipedning izlari kichik",
-          desc: "Qisqa masofalarda velosipeddan foydalanish CO₂ chiqindisini sezilarli kamaytiradi.",
-          note: "Shahar ichida ekologik transportni tanlang.",
-        },
-      ];
+      /* Полный JS для страницы — вставь вместо старого <script> */
+document.addEventListener('DOMContentLoaded', () => {
+  /* ---------------------------
+     1) Данные — факты
+     --------------------------- */
+  const facts = [
+    {
+      icon: "🌊",
+      title: "Kislorodning katta qismi okeandan",
+      desc: "Yer kislorodining katta qismi (taxminan 50–70%) okeanlarda yashovchi fitoplanktonlar tomonidan ishlab chiqariladi.",
+      note: "Okeanlar – yer nafasining muhim manbai."
+    },
+    {
+      icon: "🌳",
+      title: "Bitta daraxtning hissasi",
+      desc: "1 daraxt yiliga taxminan 22 kg CO₂ ni yutadi va atrofga kislorod chiqaradi.",
+      note: "Daraxt ekish – katta ta'sir ko‘rsatadi."
+    },
+    {
+      icon: "🥤",
+      title: "Plastik shishaning umrini o‘ylab ko‘ring",
+      desc: "Bir martalik PET shisha parchalanishi uchun yuzlab yillar kerak bo‘lishi mumkin (taxminan 450 yil).",
+      note: "Qayta ishlash va qayta foydalanish muhim."
+    },
+    {
+      icon: "💡",
+      title: "LED energiya tejaydi",
+      desc: "LED lampalar an’anaviy lampalarga nisbatan ~80% kamroq energiya iste'mol qiladi.",
+      note: "Oddiy amaliy o‘zgarishlar ham katta tejash beradi."
+    },
+    {
+      icon: "♻️",
+      title: "Alyuminiy qayta ishlash",
+      desc: "Alyuminiy bankani qayta ishlash yangi bankani ishlab chiqarishga qaraganda ~95% energiya tejaydi.",
+      note: "Qayta ishlash muhim ekologik ta'sir ko‘rsatadi."
+    },
+    {
+      icon: "🛍️",
+      title: "Mato sumka vs plastik paket",
+      desc: "Mato sumka ishlatish orqali yiliga yuzlab plastik paketlarni tejash mumkin.",
+      note: "Oddiy odat — katta farq."
+    },
+    {
+      icon: "📄",
+      title: "Qog'ozni qayta ishlash",
+      desc: "1 tonna qog‘ozni qayta ishlash ko‘plab daraxtlarni asrab qolishga yordam beradi.",
+      note: "Qayta ishlash har doim foydali."
+    },
+    {
+      icon: "🚲",
+      title: "Velosipedning izlari kichik",
+      desc: "Qisqa masofalarda velosipeddan foydalanish CO₂ chiqindisini sezilarli kamaytiradi.",
+      note: "Shahar ichida ekologik transportni tanlang."
+    }
+  ];
 
-      // Render faktlar
-      const track = document.getElementById("ecoTrack");
-      function renderCards() {
-        track.innerHTML = facts
-          .map(
-            (f) => `
-        <article class="eco-card">
-          <div class="eco-tag">${f.icon}<span>Eko fakt</span></div>
-          <h4 class="eco-title-card">${f.title}</h4>
-          <p class="eco-desc">${f.desc}</p>
-          ${f.note ? `<div class="eco-meta">${f.note}</div>` : ""}
+  /* ---------------------------
+     2) Рендер карточек (Eko Faktlar)
+     --------------------------- */
+  const track = document.getElementById('ecoTrack');
+  function renderCards() {
+    if (!track) return;
+    track.innerHTML = facts.map(f => {
+      return `
+        <article class="eco-card" role="group" aria-label="${escapeHtml(f.title)}">
+          <div class="eco-tag">${f.icon}<span style="margin-left:8px">Eko fakt</span></div>
+          <h4 class="eco-title-card">${escapeHtml(f.title)}</h4>
+          <p class="eco-desc">${escapeHtml(f.desc)}</p>
+          ${f.note ? `<div class="eco-meta">${escapeHtml(f.note)}</div>` : ''}
         </article>
-      `
-          )
-          .join("");
-      }
-      renderCards();
+      `;
+    }).join('');
+  }
+  renderCards();
 
-      // Tugmalar
-      const prevBtn = document.getElementById("ecoPrev");
-      const nextBtn = document.getElementById("ecoNext");
+  /* Helper для экранирования (безопасно вставлять текст) */
+  function escapeHtml(s) {
+    return String(s)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#039;');
+  }
 
-      function cardWidth() {
-        const card = track.querySelector(".eco-card");
-        if (!card) return 300;
-        const gap = 16;
-        return Math.round(card.getBoundingClientRect().width + gap);
-      }
+  /* ---------------------------
+     3) Карточный слайдер (горизонтальный трек) — кнопки и автоскролл
+     --------------------------- */
+  const prevBtn = document.getElementById('ecoPrev');
+  const nextBtn = document.getElementById('ecoNext');
 
-      prevBtn.addEventListener("click", () =>
-        track.scrollBy({ left: -cardWidth(), behavior: "smooth" })
-      );
-      nextBtn.addEventListener("click", () =>
-        track.scrollBy({ left: cardWidth(), behavior: "smooth" })
-      );
+  function cardWidth() {
+    const card = track && track.querySelector('.eco-card');
+    if (!card) return 280;
+    const gap = 16; // совпадает с CSS gap
+    return Math.round(card.getBoundingClientRect().width + gap);
+  }
 
-      // Avtoslayd
-      let auto = setInterval(() => nextBtn.click(), 6000);
-      track.addEventListener("mouseenter", () => clearInterval(auto));
-      track.addEventListener(
-        "mouseleave",
-        () => (auto = setInterval(() => nextBtn.click(), 6000))
-      );
+  if (prevBtn && nextBtn && track) {
+    prevBtn.addEventListener('click', () => {
+      track.scrollBy({ left: -cardWidth(), behavior: 'smooth' });
+    });
+    nextBtn.addEventListener('click', () => {
+      track.scrollBy({ left: cardWidth(), behavior: 'smooth' });
+    });
 
-      // Counter
-      const counterNumber = document.getElementById("counterNumber");
-      counterNumber.textContent = facts.length;
+    // Автоскролл с паузой при наведении / фокусе
+    let ecoAuto = setInterval(() => nextBtn.click(), 6000);
+    track.addEventListener('mouseenter', () => clearInterval(ecoAuto));
+    track.addEventListener('mouseleave', () => { ecoAuto = setInterval(() => nextBtn.click(), 6000); });
+    track.addEventListener('focusin', () => clearInterval(ecoAuto));
+    track.addEventListener('focusout', () => { ecoAuto = setInterval(() => nextBtn.click(), 6000); });
 
-      // Slayder (rasmlar)
-      const slides = document.querySelector(".slides");
-      const images = document.querySelectorAll(".slides img");
-      const prev = document.querySelector(".prev");
-      const next = document.querySelector(".next");
-      let index = 0;
-      function showSlide(i) {
-        index = (i + images.length) % images.length;
-        slides.style.transform = `translateX(${-index * 100}%)`;
-      }
-      next.addEventListener("click", () => showSlide(index + 1));
-      prev.addEventListener("click", () => showSlide(index - 1));
+    // Поддержка стрелок клавиатуры для трека (если он в фокусе)
+    track.addEventListener('keydown', (ev) => {
+      if (ev.key === 'ArrowRight') { ev.preventDefault(); nextBtn.click(); }
+      if (ev.key === 'ArrowLeft')  { ev.preventDefault(); prevBtn.click(); }
+    });
+  }
+
+  /* ---------------------------
+     4) Счётчик (если нужен) — безопасно (только если элемент есть)
+     --------------------------- */
+  const counterNumber = document.getElementById('counterNumber');
+  if (counterNumber) counterNumber.textContent = facts.length;
+
+  /* ---------------------------
+     5) Слайдер изображений (pixel-based) — надёжный вариант
+     --------------------------- */
+  const slider = document.querySelector('.slider');
+  const slidesContainer = document.querySelector('.slides');
+  const prevImageBtn = document.querySelector('.prev');
+  const nextImageBtn = document.querySelector('.next');
+
+  if (slider && slidesContainer && prevImageBtn && nextImageBtn) {
+    const imgs = Array.from(slidesContainer.querySelectorAll('img'));
+    let imgIndex = 0;
+    let autoplayTimer = null;
+
+    // Ждём загрузки изображений, чтобы правильно рассчитать ширину
+    Promise.all(imgs.map(img => {
+      return new Promise(resolve => {
+        if (img.complete && img.naturalWidth !== 0) return resolve();
+        img.addEventListener('load', resolve);
+        img.addEventListener('error', resolve); // даже при ошибке продолжаем
+      });
+    })).then(initImageSlider);
+
+    function initImageSlider() {
+      updateSlidesWidth();
+      updateSliderPosition(); // начальная позиция
+
+      // Кнопки
+      nextImageBtn.addEventListener('click', () => {
+        imgIndex = (imgIndex + 1) % imgs.length;
+        updateSliderPosition();
+      });
+      prevImageBtn.addEventListener('click', () => {
+        imgIndex = (imgIndex - 1 + imgs.length) % imgs.length;
+        updateSliderPosition();
+      });
+
+      // Автоплей
+      startAutoplay();
+      slider.addEventListener('mouseenter', stopAutoplay);
+      slider.addEventListener('mouseleave', startAutoplay);
+      slider.addEventListener('focusin', stopAutoplay);
+      slider.addEventListener('focusout', startAutoplay);
+
+      // Поддержка клавиатуры
+      slider.setAttribute('tabindex', '0');
+      slider.addEventListener('keydown', (ev) => {
+        if (ev.key === 'ArrowRight') nextImageBtn.click();
+        if (ev.key === 'ArrowLeft') prevImageBtn.click();
+      });
+
+      // Пересчёт при ресайзе
+      window.addEventListener('resize', () => {
+        // небольшая задержка на случай быстрого ресайза
+        window.requestAnimationFrame(() => {
+          updateSlidesWidth();
+          updateSliderPosition();
+        });
+      });
+    }
+
+    function updateSlidesWidth() {
+      // Если мы смещаем в px, ширина контейнера не обязательно нужна,
+      // но устанавливаем её для семантики: ширина = n * slider.clientWidth
+      const w = slider.clientWidth;
+      slidesContainer.style.width = `${imgs.length * w}px`;
+      imgs.forEach(img => {
+        img.style.width = `${w}px`;
+        img.style.flex = `0 0 ${w}px`;
+      });
+    }
+
+    function updateSliderPosition() {
+      const w = slider.clientWidth;
+      slidesContainer.style.transition = 'transform 0.6s ease-in-out';
+      slidesContainer.style.transform = `translateX(${-imgIndex * w}px)`;
+    }
+
+    function startAutoplay() {
+      if (autoplayTimer) return;
+      autoplayTimer = setInterval(() => {
+        imgIndex = (imgIndex + 1) % imgs.length;
+        updateSliderPosition();
+      }, 4000);
+    }
+
+    function stopAutoplay() {
+      if (!autoplayTimer) return;
+      clearInterval(autoplayTimer);
+      autoplayTimer = null;
+    }
+  }
+
+  /* ---------------------------
+     6) Небольшая полировка: если JS отключён — ничего страшного
+     --------------------------- */
+  // (весь функционал уже защищён проверками на существование элементов)
+
+}); // DOMContentLoaded end
     </script>
   </body>
 </html>
