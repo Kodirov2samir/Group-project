@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="uz">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+    <title>CleanDrop — Eko Faktlar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- icons -->
+    <link
+      href="https://cdn.boxicons.com/fonts/basic/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      /* ======= Global ======= */
+      :root {
+        --green-600: #16a34a;
+        --muted: #94a3b8;
+        --card-bg: #ffffff;
+        --panel-bg: #1f7a4a;
+        --accent: #10b981;
+        --radius: 14px;
+      }
+     
+
+      body {
+         font-family: "Montserrat", sans-serif;
+        margin: 0;
+        background:  #e5ffe5;
+        color: #0f172a;
+        line-height: 1.4;
+      }
+      .brand {
+        width: 150px;
+      }
+
+      a {
+        color: inherit;
+      }
+      .app {
+        display: flex;
+        min-height: 100vh;
+      }
+
+      /* ======= Sidebar (menyu) ======= */
+      .sidebar {
+        width: 300px;
+        background: #16a34a;
+        color: #fff;
+        padding: 28px 20px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 700;
+        font-size: 20px;
+        margin-bottom: 80px;
+      }
+      .brand .drop {
+        width: 34px;
+        height: 34px;
+        border-radius: 8px;
+        background: linear-gradient(180deg, #34d399, #059669);
+        display: inline-block;
+      }
+
+      .nav {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      .nav a {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+       
+        border-radius: 12px;
+        color: #e6f7ee;
+        text-decoration: none;
+        font-size: 16px;
+      }
+      .nav a.active {
+       
+        color: #fff;
+        font-weight: 600;
+      }
+      .nav a:hover {
+        color: #1f7a4a;
+      }
+      .icon {
+        font-size: 18px;
+      }
+
+      .small-note {
+        background: rgba(255, 255, 255, 0.914);
+        padding: 12px;
+        border-radius: 12px;
+        font-size: 13px;
+        color: #000000;
+        text-align: center;
+      }
+      .asosiy{
+        padding: 5px;
+        display: flex;
+        align-items: center;
+        margin-bottom: 35px;
+        width: 150px;
+         background: #4fd17d;
+         border-radius: 10px;
+         margin-left: 25px;
+         transition: 1s all ease;
+      }
+    .asosiy:hover {
+  background-color: #97e4b2;
+  transform: scale(1.1);
+}
+      /* ======= Main content ======= */
+      .main {
+        flex: 1;
+        padding: 20px 40px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+      }
+
+      /* ======= Map card ======= */
+      .map-card {
+        background: #fff;
+        border-radius: 18px;
+        padding: 18px;
+        box-shadow: 0 8px 30px rgba(15, 23, 42, 0.06);
+        max-width: 920px;
+        margin-bottom: 0px;
+      }
+      .a-wrapper {
+        display: flex;
+        align-items: center;
+      margin-bottom: 35px;
+      margin-left: 30px;
+      }
+
+      .slider {
+        position: relative;
+        overflow: hidden;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      }
+      .slides {
+        display: flex;
+        transition: transform 0.6s ease-in-out;
+      }
+      .slides img {
+        width: 100%;
+        height: 280px;
+        object-fit: cover;
+        flex-shrink: 0;
+        border-radius: 12px;
+      }
+      .prev,
+      .next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(0, 0, 0, 0.5);
+        color: #fff;
+        border: none;
+        padding: 10px 14px;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 20px;
+      }
+      .prev {
+        left: 12px;
+      }
+      .next {
+        right: 12px;
+      }
+      .nav{margin-bottom: 150px;}
+
+      /* ======= Eko Faktlar section ======= */
+      .eco-section {
+        max-width: 920px;
+      }
+      .eco-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        
+      }
+      .eco-title {
+        font-size: 22px;
+        margin: 0;
+      }
+      .eco-controls {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+      }
+      .eco-btn {
+        border: 1px solid #e6eef2;
+        background: #fff;
+        padding: 8px 12px;
+        border-radius: 10px;
+        cursor: pointer;
+      }
+      .eco-track {
+        display: flex;
+        gap: 16px;
+        overflow: auto;
+        padding-bottom: 8px;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+      }
+      .eco-card {
+        min-width: 280px;
+        max-width: 320px;
+        flex: 0 0 auto;
+        border-radius: 14px;
+        padding: 16px;
+        background: var(--card-bg);
+        box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+        scroll-snap-align: start;
+      }
+      .eco-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 10px;
+        border-radius: 999px;
+        background: #ecfdf5;
+        border: 1px solid #d1fae5;
+        font-size: 13px;
+        margin-bottom: 10px;
+      }
+      .eco-title-card {
+        font-weight: 600;
+        margin: 0 0 8px;
+      }
+      .eco-desc {
+        margin: 0;
+        color: #475569;
+        font-size: 14px;
+      }
+      .eco-meta {
+        margin-top: 10px;
+        font-size: 12px;
+        color: var(--muted);
+      }
+
+      /* ======= Counter card in sidebar ======= */
+      .counter-card {
+        background: #fff;
+        color: #0f172a;
+        padding: 12px;
+        border-radius: 12px;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        align-items: flex-start;
+      }
+      .counter-big {
+        font-size: 20px;
+        font-weight: 700;
+      }
+      .counter-small {
+        font-size: 12px;
+        color: var(--muted);
+      }
+
+      /* ======= Footer contact ======= */
+      .footer-contacts {
+        max-width: 920px;
+        margin-top: px;
+        background: #fff;
+        padding: 14px;
+        border-radius: 12px;
+        box-shadow: 0 6px 18px rgba(15, 23, 42, 0.04);
+      }
+      .contacts-row {
+        display: flex;
+        gap: 18px;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+      .contact-item {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        color: var(--muted);
+        font-size: 14px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <div class="app">
+        <!-- Sidebar -->
+        <aside class="sidebar" aria-label="Sahifa menyu">
+          <div class="brand">
+            <img
+              width="160px"
+              src="../Main.page/img/03f566bdf16549f0c73625c94171d71b21750d67.png"
+              alt=""
+            />
+          </div>
+
+          <nav class="nav" aria-label="Asosiy bo'limlar">
+            <div class="a-wrapper">
+              <span style="margin-top: 3px;margin-left: 10px;"
+                ><i class="bxr bx-home-alt" style="color: #ffffff"></i>
+              </span>
+              <a href="../Main.page/index.html"
+                ><span class="icon"><img src="./Group 14.png" alt="" /></span>
+                Asosiy</a
+              >
+            </div>
+           <div class="a-wrapper">
+            <span><i class='bxr  bx-leaf'  style='color:#ffffff'></i> </span>
+             <a href="../Yangiliklar/yangiliklar.html"
+              ><span class="icon"
+                ><img
+                  src="./photo_2025-08-28_21-08-46-removebg-preview 1.png"
+                  alt=""
+              /></span>
+              Eko yangiliklar</a
+            >
+           </div>
+            <div class="asosiy">
+              <span style="margin-top: 3px;"><i class='bxr  bx-light-bulb-on'  style='color:#ffffff'></i> </span>
+              <a class="active" href="../Eco factlar/factlar.html"
+              ><span class="icon"
+                ><img src="./Без_названия-removebg-preview 1.png" alt=""
+              /></span>
+              Eko Faktlar</a
+            >
+            </div>
+           <div class="a-wrapper">
+            <span style="margin-top: 4px;"><i class='bxr  bx-community'  style='color:#ffffff'></i> </span>
+             <a href="../Biz haqimizda/BIzhaqimixda.html"
+              ><span class="icon"
+                ><img src="./image-removebg-preview 1.png" alt=""
+              /></span>
+              Biz haqimizda</a>
+           </div>
+            
+          </nav>
+
+          <div class="small-note">
+           <h3> Yer bizning uyimiz, uni toza saqlash barchamizning burchimiz.</h3>
+          </div>
+        </aside>
+
+        <!-- Main -->
+        <main class="main">
+          <!-- Map -->
+          <section class="map-card">
+            <div class="container">
+              <h2>Qiziqarlik ecologik factlar</h2>
+              <div class="slider">
+                <div class="slides">
+                  <img
+                    src="https://thumbs.dreamstime.com/b/environment-earth-day-hands-trees-growing-seedlings-bokeh-green-background-female-hand-holding-tree-nature-field-118143566.jpg"
+                    alt="Chiqindi joyi 1"
+                  />
+                  <img src="" alt="Chiqindi joyi 2" />
+                  <img src="18a7b896.png" alt="Chiqindi joyi 3" />
+                  <img src="49093c3a.png" alt="Chiqindi joyi 4" />
+                  <img src="18a7b896.png" alt="Chiqindi joyi 5" />
+                </div>
+                <button class="prev">‹</button>
+                <button class="next">›</button>
+              </div>
+            </div>
+          </section>
+
+          <!-- Eko Faktlar -->
+          <section class="eco-section">
+            <div class="eco-header">
+              <h3 id="ecoTitle" class="eco-title">Eko Faktlar</h3>
+              <div class="eco-controls">
+                <button class="eco-btn" id="ecoPrev">‹</button>
+                <button class="eco-btn" id="ecoNext">›</button>
+              </div>
+            </div>
+            <div class="eco-track" id="ecoTrack" tabindex="0"></div>
+          </section>
+
+          <!-- Footer -->
+          <section class="footer-contacts">
+            <div class="contacts-row">
+              <div class="contact-item">✉️ example@example.com</div>
+              <div class="contact-item">🐦 @Mirzaboyev_Azizbek</div>
+              <div class="contact-item">📱 +998 94 154 98 10</div>
+              <div class="contact-item">
+                🗺️ Chiqindi tashlash joyini belgilang — yordam bering
+              </div>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <script>
+      // Faktlar
+      const facts = [
+        {
+          icon: "🌊",
+          title: "Kislorodning katta qismi okeandan",
+          desc: "Yer kislorodining katta qismi (taxminan 50–70%) okeanlarda yashovchi fitoplanktonlar tomonidan ishlab chiqariladi.",
+          note: "Okeanlar – yer nafasining muhim manbai.",
+        },
+        {
+          icon: "🌳",
+          title: "Bitta daraxtning hissasi",
+          desc: "1 daraxt yiliga taxminan 22 kg CO₂ ni yutadi va atrofga kislorod chiqaradi.",
+          note: "Daraxt ekish – katta ta'sir ko‘rsatadi.",
+        },
+        {
+          icon: "🥤",
+          title: "Plastik shishaning umrini o‘ylab ko‘ring",
+          desc: "Bir martalik PET shisha parchalanishi uchun yuzlab yillar kerak bo‘lishi mumkin (taxminan 450 yil).",
+          note: "Qayta ishlash va qayta foydalanish muhim.",
+        },
+        {
+          icon: "💡",
+          title: "LED energiya tejaydi",
+          desc: "LED lampalar an’anaviy lampalarga nisbatan ~80% kamroq energiya iste'mol qiladi.",
+          note: "Oddiy amaliy o‘zgarishlar ham katta tejash beradi.",
+        },
+        {
+          icon: "♻️",
+          title: "Alyuminiy qayta ishlash",
+          desc: "Alyuminiy bankani qayta ishlash yangi bankani ishlab chiqarishga qaraganda ~95% energiya tejaydi.",
+          note: "Qayta ishlash muhim ekologik ta'sir ko‘rsatadi.",
+        },
+        {
+          icon: "🛍️",
+          title: "Mato sumka vs plastik paket",
+          desc: "Mato sumka ishlatish orqali yiliga yuzlab plastik paketlarni tejash mumkin.",
+          note: "Oddiy odat — katta farq.",
+        },
+        {
+          icon: "📄",
+          title: "Qog'ozni qayta ishlash",
+          desc: "1 tonna qog‘ozni qayta ishlash ko‘plab daraxtlarni asrab qolishga yordam beradi.",
+          note: "Qayta ishlash har doim foydali.",
+        },
+        {
+          icon: "🚲",
+          title: "Velosipedning izlari kichik",
+          desc: "Qisqa masofalarda velosipeddan foydalanish CO₂ chiqindisini sezilarli kamaytiradi.",
+          note: "Shahar ichida ekologik transportni tanlang.",
+        },
+      ];
+
+      // Render faktlar
+      const track = document.getElementById("ecoTrack");
+      function renderCards() {
+        track.innerHTML = facts
+          .map(
+            (f) => `
+        <article class="eco-card">
+          <div class="eco-tag">${f.icon}<span>Eko fakt</span></div>
+          <h4 class="eco-title-card">${f.title}</h4>
+          <p class="eco-desc">${f.desc}</p>
+          ${f.note ? `<div class="eco-meta">${f.note}</div>` : ""}
+        </article>
+      `
+          )
+          .join("");
+      }
+      renderCards();
+
+      // Tugmalar
+      const prevBtn = document.getElementById("ecoPrev");
+      const nextBtn = document.getElementById("ecoNext");
+
+      function cardWidth() {
+        const card = track.querySelector(".eco-card");
+        if (!card) return 300;
+        const gap = 16;
+        return Math.round(card.getBoundingClientRect().width + gap);
+      }
+
+      prevBtn.addEventListener("click", () =>
+        track.scrollBy({ left: -cardWidth(), behavior: "smooth" })
+      );
+      nextBtn.addEventListener("click", () =>
+        track.scrollBy({ left: cardWidth(), behavior: "smooth" })
+      );
+
+      // Avtoslayd
+      let auto = setInterval(() => nextBtn.click(), 6000);
+      track.addEventListener("mouseenter", () => clearInterval(auto));
+      track.addEventListener(
+        "mouseleave",
+        () => (auto = setInterval(() => nextBtn.click(), 6000))
+      );
+
+      // Counter
+      const counterNumber = document.getElementById("counterNumber");
+      counterNumber.textContent = facts.length;
+
+      // Slayder (rasmlar)
+      const slides = document.querySelector(".slides");
+      const images = document.querySelectorAll(".slides img");
+      const prev = document.querySelector(".prev");
+      const next = document.querySelector(".next");
+      let index = 0;
+      function showSlide(i) {
+        index = (i + images.length) % images.length;
+        slides.style.transform = `translateX(${-index * 100}%)`;
+      }
+      next.addEventListener("click", () => showSlide(index + 1));
+      prev.addEventListener("click", () => showSlide(index - 1));
+    </script>
+  </body>
+</html>
