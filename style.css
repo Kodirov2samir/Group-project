@@ -18,7 +18,7 @@ a {
 li {
   display: flex;
   align-items: center;
-
+ 
   gap: 10px;
 }
 a:hover {
@@ -37,7 +37,7 @@ input {
   display: flex;
 }
 .main-left {
-  width: 20%;
+  width: 15%;
   background-color: #16a34a;
   display: flex;
   flex-direction: column;
@@ -60,11 +60,11 @@ input {
   margin-bottom: 200px;
 }
 .main-right { 
-  width: 80%;
+  width: 85%;
   display: flex;
 flex-direction: column;
  align-items: center;
-  background-color: #e5ffe5;
+  background-color:  #fff;
 }
 .img-wrap {
   max-width: 100%;
@@ -75,7 +75,7 @@ flex-direction: column;
   width: 100%;
 }
 .asosiy {
-  padding: 5px;
+  padding: 10px ;
   background-color: #4fd17d;
   width: 100px;
   border-radius: 10px;
@@ -85,15 +85,17 @@ flex-direction: column;
   background-color: #97e4b2;
   transform: scale(1.1);
 }
-
+#place{outline: none;
+border: none;background-color:  #fff;}
 .search-wrap {
   border: 1px solid gray;
   width: 530px;
-
-  border-radius: 10px 10px;
-  height: 35px;
+  border-radius: 30px 30px;
+  height: 40px;
   display: flex;
   justify-content: space-between;
+  padding: 0 0 0 10px;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
 }
 .src {
   margin-top: 50px;
@@ -103,14 +105,16 @@ flex-direction: column;
   align-items: center;
 }
 .btn1 {
+  height: 100%;
   cursor: pointer;
   border: none;
-  padding: 5px;
+  padding: 19px 40px;
   color: white;
   background-color: #34c358;
+  display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 10px;
+  border-radius: 30px;
 }body {
   height: 100vh;
   overflow: hidden; /* Prevents scroll, but may hide content */
@@ -120,7 +124,7 @@ flex-direction: column;
 
 }
 #map {
-  margin-left: 120px;
+  
   width: 80%;
   height: 400px;
   margin-top: 20px; 
@@ -128,28 +132,39 @@ flex-direction: column;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 .footer {
-        background: #fff;
-        border-radius: 16px;
-        box-shadow: 0 2px 8px rgba(60, 180, 120, 0.07);
-        padding: 18px 24px;
+      
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+
+        
+        padding: 0 50px;
         margin: 0 auto 24px auto;
-        max-width: 900px;
+       border-radius: 10px;
         display: flex;
         flex-wrap: wrap;
         gap: 24px;
         align-items: flex-start;
         justify-content: space-between;
         font-size: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
         margin-top: 150px;
+        height: 350px;
+        width: 90%;
       }
       .footer-col {
+        
         display: flex;
         flex-direction: column;
+        
         gap: 10px;
       }
       .footer-col.icons {
-        gap: 8px;
+        gap: 20px;
+        
       }
+      
       .footer-col .footer-title {
         font-weight: 600;
         margin-bottom: 6px;
@@ -160,6 +175,7 @@ flex-direction: column;
         gap: 8px;
         color: #222;
         text-decoration: none;
+      
       }
       .footer-col .footer-link svg {
         width: 18px;
