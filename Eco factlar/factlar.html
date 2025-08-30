@@ -127,7 +127,7 @@
       /* ======= Main content ======= */
       .main {
         flex: 1;
-        padding: 20px 40px;
+        
         box-sizing: border-box;
         display: flex;
         flex-direction: column;
@@ -142,7 +142,7 @@
         border-radius: 18px;
         padding: 18px;
         box-shadow: 0 8px 30px rgba(15, 23, 42, 0.06);
-        width: 770px;
+        width: 1200px;
         margin-bottom: 0px;
       }
       .a-wrapper {
@@ -157,8 +157,9 @@
   overflow: hidden;
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  height: 450px;
   width: 100%;
-  width: 700px; /* можно ограничить */
+  width: 1200px; /* можно ограничить */
   margin: auto;
       }
 
@@ -166,12 +167,13 @@
         display: flex;
   transition: transform 0.6s ease-in-out;
   width: 100%; /* temporary width, will be overridden by JS */
+  height: 450px;
    
       }
       .slides img {
        flex: 0 0 100%;  /* каждая картинка занимает всю ширину контейнера */
   width: 100%;
-  height: 280px;
+  height: 450px;
   object-fit: cover;
   border-radius: 12px;
       }
@@ -198,7 +200,7 @@
 
       /* ======= Eko Faktlar section ======= */
       .eco-section {
-        max-width: 920px;
+        width: 1220px;
         
       }
       .eco-header {
@@ -226,14 +228,14 @@
       .eco-track {
         display: flex;
         gap: 16px;
-        overflow: auto;
+        overflow: hidden;
         padding-bottom: 8px;
         scroll-snap-type: x mandatory;
         scroll-behavior: smooth;
         -webkit-overflow-scrolling: touch;
       }
       .eco-card {
-        width: 200px;
+        width: 400px;
         width: 260px;
         flex: 0 0 auto;
         border-radius: 14px;
@@ -291,13 +293,10 @@
 
       /* ======= Footer contact ======= */
       .footer {
-      
-        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-
-        
+        border-top: 1px solid gray;
         padding: 0 50px;
         margin: 0 auto 24px auto;
-       border-radius: 10px;
+      
         display: flex;
         flex-wrap: wrap;
         gap: 24px;
@@ -307,10 +306,8 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-
-        margin-top: px;
         height: 150px;
-        width: 90%;
+        width: 93%;
       }
       .footer-col {
         
@@ -415,8 +412,8 @@
                     alt="Chiqindi joyi 1"
                   />
                   <img src="https://www.heritagefund.org.uk/sites/default/files/styles/main_image_desktop/public/2022-11/JapaneseGarden_60_954x536.jpg.webp?itok=CGzlci-h" alt="Chiqindi joyi 2" />
-                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgmQGDNvmyjR3beaun97h9FTs0lNF_Yp6-_A&s" alt="Chiqindi joyi 3" />
-                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKGAnvOOPyeQ_cawBwbMZOGr9Zm-pZonl76g&s" alt="Chiqindi joyi 4" />
+                  <img src="https://m.media-amazon.com/images/I/71vTOIsi7yL._UF1000,1000_QL80_.jpg" alt="Chiqindi joyi 3" />
+                  <img src="https://i0.wp.com/digital-photography-school.com/wp-content/uploads/2018/10/bluebells%2C_oxfordshire.jpg?resize=1500%2C1000&ssl=1" alt="Chiqindi joyi 4" />  
                   <img src="https://res.cloudinary.com/cognitives/image/upload/c_fill,dpr_auto,f_auto,fl_lossy,g_face:auto,q_auto/ezfkqemao7tt1ehvrcrd" alt="Chiqindi joyi 5" />
                 </div>
                 <button class="prev">‹</button>
